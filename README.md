@@ -35,6 +35,7 @@ my-mini-llm-pipeline/
 ├── LICENSE                # MIT License
 ├── README.md              # Project documentation
 └── requirements.txt       # Python dependencies
+```
 
 ## 🚀 Quick Start
 

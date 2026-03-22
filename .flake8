@@ -1,0 +1,14 @@
+[flake8]
+# Ignore E501: line too long
+extend-ignore = E501
+
+# Exclude directories that don't need to be checked
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    env,
+    .huggingface
+
+# Optional: Set max complexity for functions
+max-complexity = 10
