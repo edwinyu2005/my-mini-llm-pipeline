@@ -1,0 +1,9 @@
+# --- Core Dependencies ---
+# Using the CPU version of torch for CI/CD to save time and space
+torch
+
+# --- Dev & Test Dependencies ---
+flake8
+pytest
+pytest-cov
+dataclasses
