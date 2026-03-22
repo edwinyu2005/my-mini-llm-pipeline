@@ -21,16 +21,17 @@ The goal of this project is to demystify the LLM lifecycle by building and tunin
 ```text
 my-mini-llm-pipeline/
 ├── data/                  # Raw and processed datasets (ignored by git)
-├── notebooks/             # Jupyter notebooks for EDA and quick prototyping
 ├── src/                   # Reusable source code (the core package)
 │   ├── __init__.py
 │   ├── model/             # Model architectures (e.g., your custom GPT)
 │   ├── data/              # Data loaders and tokenization utilities
 │   └── utils/             # Helper functions, logging, etc.
 ├── scripts/               # Executable scripts for the pipeline
-│   ├── 01_pretrain.py     # Script to train the toy model from scratch
-│   ├── 02_sft.py          # Script for LoRA fine-tuning
-│   └── 03_chat.py         # CLI or Gradio interface for inference
+│   ├── pretrain.py        # Script to train the toy model from scratch
+│   ├── sft.py             # Script for LoRA fine-tuning
+│   └── chat.py            # CLI or Gradio interface for inference
+├── tests/                 # Automated unit and integration tests (Pytest)
+├── .github/               # CI/CD pipeline (Linting & Testing)
 ├── .gitignore             # Git ignore rules
 ├── LICENSE                # MIT License
 ├── README.md              # Project documentation
@@ -39,4 +40,8 @@ my-mini-llm-pipeline/
 
 ## 🚀 Quick Start
 
-*(Coming soon: Instructions on how to set up the environment and run the Phase 1 pre-training script.)*
+### 1. Setup Environment
+```bash
+chmod +x setup.sh
+./setup.sh
+source venv/bin/activate
