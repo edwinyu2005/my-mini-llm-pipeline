@@ -33,13 +33,17 @@ def get_batch(split, config, data_dir=None):
         for i in ix
     ])
 
-    # 3. Pin memory first, THEN transfer asynchronously to the GPU
-    x_pinned = x.pin_memory()
-    y_pinned = y.pin_memory()
+    # Only pin memory and use non-blocking transfer if CUDA is the target device
+    if 'cuda' in config.device:
+        x = x.pin_memory()
+        y = y.pin_memory()
+        non_blocking = True
+    else:
+        non_blocking = False
 
     return (
-        x_pinned.to(config.device, non_blocking=True),
-        y_pinned.to(config.device, non_blocking=True)
+        x.to(config.device, non_blocking=non_blocking),
+        y.to(config.device, non_blocking=non_blocking)
     )
 
 
