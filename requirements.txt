@@ -1,6 +1,8 @@
 # --- Core Dependencies ---
-# Using the CPU version of torch for CI/CD to save time and space
+
 torch
+numpy
+requests
 
 # --- Dev & Test Dependencies ---
 flake8
